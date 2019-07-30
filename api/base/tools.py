@@ -8,7 +8,8 @@ def camel_to_underline(camel_format):
         for _s_ in camel_format:
             underline_format += _s_ if _s_.islower() else '_'+_s_.lower()
     return underline_format
-    
+
+
 def underline_to_camel(underline_format):
     '''
         下划线命名格式驼峰命名格式
@@ -19,7 +20,8 @@ def underline_to_camel(underline_format):
             camel_format += _s_.capitalize()
     return camel_format
 
-def camelize(str_format, separator="/"):
+
+def camel_to_slash_line(str_format, separator="/"):
     '''
         斜杆命名格式驼峰命名格式
     '''
@@ -29,17 +31,3 @@ def camelize(str_format, separator="/"):
         camel_format += str_format.capitalize()
     return camel_format
 
-def get_file_class_params(*args):
-    args = args[0]
-    uri = args.get("uri"),
-    uri = uri[0]
-    headers = args.get("headers"),
-    query_arguments = args.get("query_arguments", {}),
-    file_path = uri[1:uri.find("?")]
-    if file_path[0:4] == 'app/':
-        file_path = file_path[4:]
-    else:
-        file_path = ''
-    class_name = camelize(uri[0:uri.find("?")])
-    class_name = underline_to_camel(class_name)
-    return file_path, class_name

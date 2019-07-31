@@ -1,0 +1,18 @@
+version: '3'
+services:
+  ab-api:
+    container_name: 'ab-api'
+    build: '.'
+    image: 'ab-api'
+    ports:
+      - '60001:5000'
+    environment:
+      AB_RDS_USERNAME: ''
+      AB_RDS_PASSWD: ''
+      AB_RDS_BASE_DB_NAME: ''
+      AB_RDS_PORT: ''
+      AB_RDS_MASTER_HOST: ''
+      AB_RDS_SLAVE_HOST: ''
+      AB_REDIS_HOST: ''
+      AB_REDIS_PORT: ''
+      AB_REDIS_DB: ''

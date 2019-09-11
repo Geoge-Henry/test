@@ -10,4 +10,6 @@ class ChatBot(BaseClass):
     def get(self):
         print("okk")
         self.write("gggg")
-        print(self.get_query_arguments("asd"))
+        print(self.get_query_argument("asd"))
+        print(222)
+
